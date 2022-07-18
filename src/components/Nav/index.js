@@ -1,20 +1,27 @@
 import React from "react";
 
+const categories = [
+  {
+      name: 'Commercial',
+      description: 'Photos of grocery stores, food trucks, and other commercial projects',
+  },
+  {
+      name: 'Portraits',
+      description: 'Portraits of people in my life',
+  },
+  {
+      name: 'Landscape',
+      description: 'Fields, farmhouses, waterfalls, and the beauty of nature',
+  },
+];
+
+function categorySelected(name) {
+  console.log(`${name} clicked`);
+  // console.log('You clicked a Nav link!')
+};
+
 const Nav = () => {
-  const categories = [
-    {
-        name: 'Commercial',
-        description: 'Photos of grocery stores, food trucks, and other commercial projects',
-    },
-    {
-        name: 'Portraits',
-        description: 'Portraits of people in my life',
-    },
-    {
-        name: 'Landscape',
-        description: 'Fields, farmhouses, waterfalls, and the beauty of nature',
-    },
-  ];
+ 
   return (
     <header>
       <h2>
@@ -37,7 +44,9 @@ const Nav = () => {
                 // must have a key attribute that's set to be something unique. 
                 // This helps React keep track of items in the virtual DOM.
                 <li className='mx-1' key={category.name} >
-                    <span>{category.name}</span>
+                     <span onClick={() => categorySelected(category.name)} >
+                      {category.name}
+                      </span>
                 </li>
             ))}
         </ul>
