@@ -23,9 +23,9 @@ function categorySelected(name) {
 const Nav = () => {
  
   return (
-    <header>
+    <header className="flex-row px-1">
       <h2>
-        <a href="/">
+        <a href="/" className="flex-row px-1 my-1">
           <span role="img" aria-label="camera"> 📸</span>Oh Snap!
         </a>
       </h2>
@@ -37,13 +37,13 @@ const Nav = () => {
                 </a>
             </li>
             <li>
-                <span>Contact Me</span>
+                <span>Contact</span>
             </li>
             {categories.map((category) => (
                 // Whenever we map over anything in JSX, the outermost element 
                 // must have a key attribute that's set to be something unique. 
                 // This helps React keep track of items in the virtual DOM.
-                <li className='mx-1' key={category.name} >
+                <li className='mx-2' key={category.name} >
                      <span onClick={() => categorySelected(category.name)} >
                       {category.name}
                       </span>
