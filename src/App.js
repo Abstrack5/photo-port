@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-// import logo from './logo.svg';
-import "./App.css";
-import About from "./components/About";
-import Nav from "./components/Nav";
-import Gallery from "./components/Gallery";
+import React, { useState } from 'react';
+import Nav from './components/Nav';
+import About from './components/About';
+import Gallery from './components/Gallery';
 
 function App() {
   const [categories] = useState([
@@ -30,9 +28,9 @@ function App() {
       categories={categories}
       setCurrentCategory={setCurrentCategory}
       currentCategory={currentCategory}
-      />
+      ></Nav>
       <main>
-        <Gallery />
+        <Gallery currentCategory={currentCategory} />
         <About />
       </main>
     </div>
