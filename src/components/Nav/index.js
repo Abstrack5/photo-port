@@ -25,14 +25,14 @@ const Nav = () => {
   return (
     <header className="flex-row px-1">
       <h2>
-        <a href="/" className="flex-row px-1 my-1">
+        <a data-testid='link' href="/" className="flex-row px-1 my-1">
           <span role="img" aria-label="camera"> 📸</span>Oh Snap!
         </a>
       </h2>
       <nav>
         <ul className='flex-row'>
             <li className='mx-2'>
-                <a href='about'>
+                <a data-testid='about' href='#about'>
                     About Me
                 </a>
             </li>

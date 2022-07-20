@@ -19,14 +19,15 @@ afterEach(cleanup); //This will ensure that after each test, we won't have any l
 
 
 describe('About component', () => { //declaring the component were testing
-
+    // baseline test to verify that the component is rendering
     it('renders', () => { //it or test can be used to test
         render(<About />);   
     });
-
+    // snapshot test
     it('matches snapshot DOM node structure', () =>{
         const {asFragment } = render(<About />); //returns a snapshot of the About component
         expect(asFragment()).toMatchSnapshot();
     })
 
-})
+});
+
