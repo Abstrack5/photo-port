@@ -5,6 +5,7 @@ import ContactForm from './components/Contact';
 import Gallery from './components/Gallery';
 
 function App() {
+  const [contactSelected, setContactSelected] = useState(false);
   const [categories] = useState([
     {
       name: "commercial",
@@ -29,11 +30,20 @@ function App() {
       categories={categories}
       setCurrentCategory={setCurrentCategory}
       currentCategory={currentCategory}
+      contactSelected={contactSelected}
+      setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <ContactForm />
-        <Gallery currentCategory={currentCategory} />
-        <About />
+        {!contactSelected ? ( // a ternary operator
+          <> 
+          {/* <> are called React fragments—a shorthand abbreviation for <React.Fragment></React.Fragment>. */}
+          <Gallery currentCategory={currentCategory} />
+          <About />
+          </>
+        ) : (
+          <ContactForm />
+        )}
+        
       </main>
     </div>
   );
