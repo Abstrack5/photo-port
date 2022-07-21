@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 ```
+# DEPLOY GITHUB PAGES *
 navigate to the project's root directory and install gh-pages as a devDependency, using the following command:
 npm install -D gh-pages
 
